@@ -59,12 +59,12 @@ public class WebSampleTest extends AbstractTest {
         homePage = new HomePage(getDriver());
         BrandModelsPage productsPage = homePage.selectBrand("Samsung");
         // Select phone model
-        ModelInfoPage productInfoPage = productsPage.selectModel("Galaxy S10+");
+        ModelInfoPage productInfoPage = productsPage.selectModel("Galaxy S10 Lite");
         // Verify phone specifications
-        Assert.assertEquals(productInfoPage.readDisplay(), "6.4\"", "Invalid display info!");
-        Assert.assertEquals(productInfoPage.readCamera(), "16MP", "Invalid camera info!");
-        Assert.assertEquals(productInfoPage.readRam(), "8/12GB RAM", "Invalid ram info!");
-        Assert.assertEquals(productInfoPage.readBattery(), "4100mAh", "Invalid battery info!");
+        Assert.assertEquals(productInfoPage.readDisplay(), "6.7\"", "Invalid display info!");
+        Assert.assertEquals(productInfoPage.readCamera(), "48MP", "Invalid camera info!");
+        Assert.assertEquals(productInfoPage.readRam(), "6/8GB RAM", "Invalid ram info!");
+        Assert.assertEquals(productInfoPage.readBattery(), "4500mAh", "Invalid battery info!");
     }
 
 
