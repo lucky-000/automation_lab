@@ -26,7 +26,9 @@ import com.qaprosoft.carina.demo.gui.components.NewsItem;
 
 public class NewsPage extends AbstractPage {
     
-    @FindBy(className="searchFor")
+    
+
+	@FindBy(className="searchFor")
     private ExtendedWebElement searchTextField;
     
     @FindBy(xpath="//input[@value='Search']")
