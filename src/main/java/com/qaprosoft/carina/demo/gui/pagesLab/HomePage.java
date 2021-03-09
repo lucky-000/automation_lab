@@ -14,39 +14,38 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractPage;
 import com.qaprosoft.carina.demo.gui.components.FooterMenu;
 import com.qaprosoft.carina.demo.gui.components.WeValuePrivacyAd;
+import com.qaprosoft.carina.demo.gui.pagesLab.components.HeaderMenu;
 import com.qaprosoft.carina.demo.gui.pagesLab.components.SearchingItem;
 
 
 
 public class HomePage extends AbstractPage{
 
-	private final  Keys keyToSearch = Keys.ENTER;
-	@FindBy(id="txtGlobalSearch")
-	private ExtendedWebElement searchTextField;
-	
-	@FindBy(xpath="//div[@class='gs-title']")
-	private List<SearchingItem> resultSearching;
+	@FindBy(xpath="//header[@class=\"b-head\"]")
+	private HeaderMenu headerMenu;
+	@FindBy(xpath="//a[text()='English']")
+	private ExtendedWebElement englishLanguage;
+	@FindBy(xpath="// p[@class='footer-lang-switch']/strong")
+	private ExtendedWebElement activLanguage;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public ExtendedWebElement searchText(String searchingText) {
-		
-		return searchTextField;
-		
-	}
-	public void inputText(String searchingText) {
-		searchTextField.type(searchingText);  
-		searchTextField.sendKeys(keyToSearch);
-	}
 	
-	public List<SearchingItem> searchTextField(String q){
-		
-		searchTextField.type(q);
-		searchTextField.sendKeys(keyToSearch);
-		return resultSearching;
+	public HeaderMenu getHeaderMenu() {
+	 return headerMenu;
 	}
+	public void clickEnglishLanguage() {
+		englishLanguage.click();
+	}
+	public String readLanguage() {
+		 assertElementPresent(activLanguage);
+		return activLanguage.getText();
+		
+	}
+
+
 	
 	
 
