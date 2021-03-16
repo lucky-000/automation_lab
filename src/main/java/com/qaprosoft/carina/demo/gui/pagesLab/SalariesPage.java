@@ -10,41 +10,51 @@ import com.qaprosoft.carina.core.gui.AbstractPage;
 public class SalariesPage extends AbstractPage{
 	
 
-	@FindBy(xpath="// select[@name='city']/option[@value='all']")
-	private ExtendedWebElement city;
-	@FindBy(xpath="//*[contains(text(),'Business analyst')]")
+
+	@FindBy(xpath="// select[@name='title']")
 	private ExtendedWebElement position;
 	@FindBy(xpath="//a[@href='https://jobs.dou.ua/salaries/dynamics/']")
 	private ExtendedWebElement dunamicTab;
-//	@FindBy(xpath="// select[@name='city']")
-//	private ExtendedWebElement city1;
-		@FindBy(xpath="//option[contains(text(),'Êèåâ')]")
+	@FindBy(xpath="// select[@name='city']")
+	private ExtendedWebElement city;
+		@FindBy(xpath="// select[@name='snapshot']")
 	private ExtendedWebElement cityDynamic;
 	
+	@FindBy(xpath="//span[@class='num']")
+	private ExtendedWebElement resultSalary;
 	public SalariesPage(WebDriver driver) {
 		super(driver);
 		setPageAbsoluteURL("https://jobs.dou.ua/salaries/");
 	
 		// TODO Auto-generated constructor stub
 	}
-
-	public void clickAllCity() {
-		city.click();
-	}
-	public void clickPositionBusiness() {
-		position.click();
-	}
+	
 
 	public void clickDunamicTab() {
 		dunamicTab.click();
 	}
 	
-	public void clickDumanicCity() {
-		city.click();
-	}
-	public void getUrlPage(String urlCity) {
-		setPageAbsoluteURL("https://jobs.dou.ua/salaries/"+urlCity);
+	public void chooseDumanicCity(String city) {
+		cityDynamic.select(city);
 	}
 	
+	public String getUrlPage(String urlCity) {
+		String urlPage="https://jobs.dou.ua/salaries/dynamics/"+urlCity;
+		return urlPage; 
+	}
 	
+	public void chooseCity(String city) {
+		this.city.select(city);
+	}
+	public void choosePosition(String position) {
+		this.position.select(position);
+	}
+//	public String readResultSalary() {
+//		return resultSalary.getText();
+//	}
+	public boolean stringToInt() {
+		int resultSal = Integer.parseInt(resultSalary.getElement().getText());
+		if (resultSal>0) {return true;}
+		return false;
+	}
 }

@@ -23,6 +23,8 @@ public class LoginForm extends AbstractUIObject  {
 	@FindBy(xpath="//button[@class='big-button btnSubmit'][contains(text(),'Войти')]")
 	private ExtendedWebElement buttonLogin;
 	
+	@FindBy(xpath="//a[@class='min-profile']")
+	private ExtendedWebElement activeProfile;
 	public LoginForm(WebDriver driver, SearchContext searchContext) {
 		super(driver, searchContext);
 		// TODO Auto-generated constructor stub
@@ -55,5 +57,7 @@ public class LoginForm extends AbstractUIObject  {
 		assertElementPresent(password);
 		return password.getAttribute("name");
 	}
-	
+	public boolean readProfile() {
+		return activeProfile.isElementPresent();
+	}
 }
