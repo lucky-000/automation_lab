@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "local_names": {
+        "type": "object",
+        "properties": {
+          "ascii": {
+            "type": "string"
+          },
+          "az": {
+            "type": "string"
+          },
+          "bg": {
+            "type": "string"
+          },
+          "ca": {
+            "type": "string"
+          },
+          "da": {
+            "type": "string"
+          },
+          "de": {
+            "type": "string"
+          },
+          "en": {
+            "type": "string"
+          },
+          "eu": {
+            "type": "string"
+          },
+          "fa": {
+            "type": "string"
+          },
+          "feature_name": {
+            "type": "string"
+          },
+          "fi": {
+            "type": "string"
+          },
+          "fr": {
+            "type": "string"
+          },
+          "he": {
+            "type": "string"
+          },
+          "hr": {
+            "type": "string"
+          },
+          "hu": {
+            "type": "string"
+          },
+          "it": {
+            "type": "string"
+          },
+          "ja": {
+            "type": "string"
+          },
+          "la": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "string"
+          },
+          "nl": {
+            "type": "string"
+          },
+          "no": {
+            "type": "string"
+          },
+          "pl": {
+            "type": "string"
+          },
+          "ro": {
+            "type": "string"
+          },
+          "ru": {
+            "type": "string"
+          },
+          "sk": {
+            "type": "string"
+          },
+          "sr": {
+            "type": "string"
+          },
+          "tr": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "ascii",
+          "az",
+          "bg",
+          "ca",
+          "da",
+          "de",
+          "en",
+          "eu",
+          "fa",
+          "feature_name",
+          "fi",
+          "fr",
+          "he",
+          "hr",
+          "hu",
+          "it",
+          "ja",
+          "la",
+          "lt",
+          "nl",
+          "no",
+          "pl",
+          "ro",
+          "ru",
+          "sk",
+          "sr",
+          "tr"
+        ]
+      },
+      "lat": {
+        "type": "number"
+      },
+      "lon": {
+        "type": "number"
+      },
+      "country": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true,
+    "required": [
+      "name",
+      "local_names",
+      "lat",
+      "lon",
+      "country"
+    ]
+  },
+  "additionalItems": true
+}

@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number"
+    },
+    "lon": {
+      "type": "number"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "timezone_offset": {
+      "type": "integer"
+    },
+    "daily": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dt": {
+            "type": "integer"
+          },
+          "sunrise": {
+            "type": "integer"
+          },
+          "sunset": {
+            "type": "integer"
+          },
+          "temp": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "number"
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "night": {
+                "type": [
+                  "number",
+                  "integer"
+                ]
+              },
+              "eve": {
+                "type": "number"
+              },
+              "morn": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "day",
+              "min",
+              "max",
+              "night",
+              "eve",
+              "morn"
+            ]
+          },
+          "feels_like": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "number"
+              },
+              "night": {
+                "type": "number"
+              },
+              "eve": {
+                "type": "number"
+              },
+              "morn": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "day",
+              "night",
+              "eve",
+              "morn"
+            ]
+          },
+          "pressure": {
+            "type": "integer"
+          },
+          "humidity": {
+            "type": "integer"
+          },
+          "dew_point": {
+            "type": "number"
+          },
+          "wind_speed": {
+            "type": "number"
+          },
+          "wind_deg": {
+            "type": "integer"
+          },
+          "weather": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "main": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true,
+              "required": [
+                "id",
+                "main",
+                "description",
+                "icon"
+              ]
+            },
+            "additionalItems": true
+          },
+          "clouds": {
+            "type": "integer"
+          },
+          "pop": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          },
+          "snow": {
+            "type": "number"
+          },
+          "uvi": {
+            "type": [
+              "number",
+              "integer"
+            ]
+          },
+          "rain": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "dt",
+          "sunrise",
+          "sunset",
+          "temp",
+          "feels_like",
+          "pressure",
+          "humidity",
+          "dew_point",
+          "wind_speed",
+          "wind_deg",
+          "weather",
+          "clouds",
+          "pop",
+          "uvi"
+        ]
+      },
+      "additionalItems": true
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "lat",
+    "lon",
+    "timezone",
+    "timezone_offset",
+    "daily"
+  ]
+}
